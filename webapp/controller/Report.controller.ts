@@ -39,22 +39,22 @@ export default class Report extends BaseController<LocalState> {
   public async GetReport() {
 
    
-    this.viewState.reportData = await this.genericService.Request<ReportData[]>("ReportData", {
-      begda: "20230101",
-      endda: "20231201",
-    });
+    // this.viewState.reportData = await this.genericService.Request<ReportData[]>("ReportData", {
+    //   begda: "20230101",
+    //   endda: "20231201",
+    // });
     
 
-    var report = this.viewState.reportData;
-    report.forEach((element, i, arr) => {
-      arr[i].bgtrm = this.datumToDottedDate(element.bgtrm);
-      arr[i].entrm = this.datumToDottedDate(element.entrm);
-    });
+    // var report = this.viewState.reportData;
+    // report.forEach((element, i, arr) => {
+    //   arr[i].bgtrm = this.datumToDottedDate(element.bgtrm);
+    //   arr[i].entrm = this.datumToDottedDate(element.entrm);
+    // });
  
 
 
-    this.RefreshViewState();
-    console.log(this.viewState.reportData);
+    // this.RefreshViewState();
+    // console.log(this.viewState.reportData);
 
   }
   async editClick(awref: any,Pernr :any) {
@@ -102,7 +102,33 @@ export default class Report extends BaseController<LocalState> {
     if (endda) {
       endda.setHours(12);
     }
+ 
 
+    let trbegda = this.getSapDateFormat(begda);
+    let trendda = this.getSapDateFormat(endda);
+    
+
+
+    this.viewState.reportData = await this.genericService.Request<ReportData[]>("ReportData", {
+     
+      begda: trbegda,
+      endda: trendda,
+      
+      // begda: begda,
+      // endda: endda,
+    });
+    
+
+    var report = this.viewState.reportData;
+    report.forEach((element, i, arr) => {
+      arr[i].bgtrm = this.datumToDottedDate(element.bgtrm);
+      arr[i].entrm = this.datumToDottedDate(element.entrm);
+    });
+ 
+
+
+    this.RefreshViewState();
+    console.log(this.viewState.reportData);
 
     
     // Rest of the code...
