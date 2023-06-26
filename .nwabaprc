@@ -1,0 +1,13 @@
+{
+    "base": "./dist",
+    "conn_server": "https://fhddev.sgofc.com:8001/",
+    "conn_client" : "220",
+    "conn_user": "ABAPDEV",
+    "conn_password": "Vesa365.",
+    "abap_package": "ZHRVS",
+    "abap_bsp": "ZHRVS_RATING",
+    "abap_transport": "FHDK900786",
+    "abap_bsp_text": "RATING FORM",
+    "conn_usestrictssl" : false,
+    "calcappindex" : true
+}

@@ -1,0 +1,15 @@
+{
+  "generator-ui5-ts-app": {
+    "application": "rating",
+    "namespace": "vesa.azersun",
+    "framework": "SAPUI5",
+    "frameworkVersion": "1.109.1",
+    "author": "vesacons",
+    "initrepo": false,
+    "tstypes": "@sapui5/ts-types-esm",
+    "tstypesVersion": "1.109.1",
+    "appId": "vesa.azersun.rating",
+    "appURI": "vesa.azersun/rating",
+    "setupCompleted": true
+  }
+}

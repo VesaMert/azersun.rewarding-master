@@ -1,0 +1,8 @@
+{
+  "sap": {
+    "target": "http://hrdev.sgofc.com:8000/",
+    "auth": "XVESA:Vesa365.",
+    "rejectUnauthorized" : false,
+    "strictSSL": false
+  }
+}
